@@ -44,16 +44,25 @@ export const verifyDayForEmail = () => {
 
 export const buildEmailBody = () => {
     const emailBody = `
-        Caro cliente,
+    Prezado cliente,
+
+    Temos o prazer de apresentar os novíssimos lançamentos e os modelos mais cobiçados da CarStore, selecionados especialmente para você!
     
-        Confira os últimos lançamentos e os veículos mais vendidos na CarStore!
+    Destaques da Semana:
     
-        [Inserir informações sobre os veículos]
+    SUV Xplorer 3000: Conquiste novos terrenos com tecnologia de ponta e conforto excepcional. Agora disponível com taxa de financiamento especial de apenas 0.99% ao mês.
+    EcoHatch 2024: Um avanço em eficiência energética e design sustentável. Receba até R$5.000 de bônus na troca pelo seu carro antigo.
+    Luxury Sedan Prime Edition: Elegância e performance se encontram. Beneficie-se de um pacote de serviços exclusivo gratuito pelo primeiro ano.
+    Oferta Especial por Tempo Limitado:
+    Aproveite as condições imperdíveis de aquisição válidas até o final do mês! Consulte detalhes na loja ou em nosso site.
     
-        Não perca as condições especiais de aquisição disponíveis por tempo limitado!
+    Não deixe de visitar a CarStore mais próxima para um test drive ou fale com um de nossos consultores especializados para mais informações.
     
-        Atenciosamente,
-        Equipe CarStore
+    Agradecemos a sua confiança na CarStore. Estamos ansiosos para ajudá-lo a encontrar o veículo perfeito para suas necessidades e desejos.
+    
+    Cordialmente,
+    
+    Equipe CarStore
     `;
     return emailBody;
 }
