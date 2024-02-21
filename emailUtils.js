@@ -1,4 +1,3 @@
-// Não alterar este código, a menos que haja uma boa justificativa.
 export const sendEmail = (addressee, subject, body) => {
     if (!addressee) {
         return {
