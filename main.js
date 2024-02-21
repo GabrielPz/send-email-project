@@ -1,4 +1,4 @@
-import {sendEmail, buildEmailBody, verifyDayForEmail} from './emailUtils';
+import {sendEmail, buildEmailBody, verifyDayForEmail} from './emailUtils.js';
 
 
 const listaClientes = [
@@ -7,18 +7,21 @@ const listaClientes = [
 ];
 
 async function sendEmailForClients(listaClientes) {
-    if (!verificaDiaParaEnvio()) {
-      console.log("Hoje não é dia de enviar e-mails.");
-      return;
+    if (!verifyDayForEmail()) {
+        console.log("Hoje não é dia de enviar e-mails.");
+        return;
     }
-  
-    const corpoEmail = montaCorpoEmail();
+
+    const emailBody = buildEmailBody();
     
     listaClientes.forEach(cliente => {
-      if (cliente.receberMarketing) {
-        enviarEmail(cliente.email, corpoEmail)
-          .then(() => console.log(`E-mail enviado com sucesso para: ${cliente.email}`))
-          .catch(erro => console.log(`Falha ao enviar e-mail para: ${cliente.email}. Erro: ${erro}`));
-      }
-    });
-  }
+        if (cliente.receberMarketing) {
+            sendEmail(cliente.email, corpoEmail)
+            .then(() => console.log(`E-mail enviado com sucesso para: ${cliente.email}`))
+            .catch(erro => console.log(`Falha ao enviar e-mail para: ${cliente.email}. Erro: ${erro}`));
+        }
+        });
+}
+
+
+sendEmailForClients(listaClientes);
